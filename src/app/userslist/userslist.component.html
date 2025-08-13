@@ -1,0 +1,42 @@
+<section>
+    <div class="title">
+        <h1>Users List</h1>
+    </div>
+    <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu sorting" >
+            <mat-icon>sort</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="allUsers()">
+                <mat-icon>contacts</mat-icon>
+                <span>All users</span>
+            </button>
+            <button mat-menu-item  (click)="sortActive()">
+                <mat-icon>done_outline</mat-icon>
+                <span>Active</span>
+            </button>
+            <button mat-menu-item  (click)="sortInActive()">
+                <mat-icon>cancel_presentation</mat-icon>
+                <span>Inactive</span>
+            </button>
+        </mat-menu>
+
+        <mat-form-field class="form-field">
+            <mat-label>User name</mat-label>
+            <input matInput 
+            [(ngModel)]="searchText"
+            (input)="applyFilter()" 
+            placeholder="Поиск">
+        </mat-form-field>
+    </div>
+    <div class="task-list">
+        <ol>
+            @for (user of displayedUsers; track user; let i = $index) {
+                <li class="task-item" (click)="openUserWindow(user.id)">
+                    <span class="task-number">{{ i + 1 }}.</span> 
+                    <span class="task-title" >{{ user.name }}</span>
+                </li>
+            }
+        </ol>
+    </div>
+</section>

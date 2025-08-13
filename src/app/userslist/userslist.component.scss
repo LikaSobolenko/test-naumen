@@ -1,0 +1,47 @@
+section {
+    max-width: 700px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+}
+
+.task-list {
+    width: 400px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    margin-bottom: 8px;
+    background: #a9a9a92f;
+    border-radius: 12px;
+
+    .task-number {
+        margin-right: 8px;
+    }
+}
+
+.form-field {
+    margin-left: 5px;
+    width: calc(100% - 53px);
+}
+
+:host ::ng-deep .mat-mdc-fab {
+    height: 40px;
+    width: 40px;
+}
+
+ol {
+    padding-inline-start: 0
+}
+
+@media screen and (max-width: 520px) {
+    .task-list {
+        width: 100%;
+    }   
+}
