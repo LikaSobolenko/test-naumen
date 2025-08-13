@@ -1,4 +1,8 @@
 # TestNaumen
+Application for displaying a list of users. Filtering by status (active and inactive), and searching by name. Opening a window with user data (email).
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
 
